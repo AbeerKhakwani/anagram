@@ -46,6 +46,20 @@
             //Assert
             $this->assertEquals(array(true, false), $result);
         }
+
+        function test_matchWords()
+        {
+            $test_Anagram = new Anagram;
+            $input1 = "ya";
+            $input2 = array("ay");
+
+            //Act
+            $result = $test_Anagram->anagramCheck($input1, $input2);
+
+            //Assert
+            $this->assertEquals(array(true), $result);
+
+        }
     }
 
 ?>
