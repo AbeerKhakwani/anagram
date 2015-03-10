@@ -8,12 +8,12 @@
         {
             $results = array();
 
-            $main_split_word = str_split($main_word);
+            $main_split_word = str_split(strtolower($main_word));
             sort($main_split_word);
 
             foreach($array_to_compare as $compare) {
 
-                $temp_word = str_split($compare);
+                $temp_word = str_split(strtolower($compare));
                 sort($temp_word);
 
                 if($main_split_word == $temp_word) {
