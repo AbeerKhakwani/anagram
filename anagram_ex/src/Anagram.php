@@ -25,7 +25,7 @@ class Anagram
 
             if (count($intersection) == count($main_split_word)) {
                 array_push($results, 'anagram');
-            } else if (count($intersection) > 0) {
+            } else if ((count($intersection) > 0) AND (count($intersection) == count($temp_word))) {
                 array_push($results, 'partial');
             } else {
                 array_push($results, 'no');
