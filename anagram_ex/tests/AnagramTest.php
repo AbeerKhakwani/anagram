@@ -50,14 +50,28 @@
         function test_matchWords()
         {
             $test_Anagram = new Anagram;
-            $input1 = "ya";
-            $input2 = array("ay");
+            $input1 = "bread";
+            $input2 = array("beard");
 
             //Act
             $result = $test_Anagram->anagramCheck($input1, $input2);
 
             //Assert
             $this->assertEquals(array(true), $result);
+
+        }
+
+        function test_matchWordsFAIL()
+        {
+            $test_Anagram = new Anagram;
+            $input1 = "bread";
+            $input2 = array("beord","bread");
+
+            //Act
+            $result = $test_Anagram->anagramCheck($input1, $input2);
+
+            //Assert
+            $this->assertEquals(array(false, true), $result);
 
         }
     }

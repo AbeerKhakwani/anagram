@@ -12,7 +12,7 @@
             sort($main_split_word);
 
             foreach($array_to_compare as $compare) {
-                
+
                 $temp_word = str_split($compare);
                 sort($temp_word);
 

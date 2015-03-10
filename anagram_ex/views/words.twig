@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+        <title>Anagram Tester!</title>
+    </head>
+    <body>
+        <div class='container'>
+            <h1>Results!</h1>
+            <div class='row'>
+                {% set tick = 0 %}
+                {% for item in result %}
+                 {% if item == true  %}
+                 <p>{{ user_words[tick] }} is an anagram!</p>
+                 {% elseif item == false %}
+                 <p>{{ user_words[tick] }} is NOT an anagram. =(</p>
+                 {% endif %}
+                 {% set tick = tick + 1 %}
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>
