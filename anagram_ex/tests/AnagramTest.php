@@ -10,7 +10,7 @@
             //Arrange
             $test_Anagram= new Anagram;
             $input1 = "a";
-            $input2 = array("a");
+            $input2 = "a";
 
             //Act
             $result = $test_Anagram->anagramCheck($input1,$input2);
@@ -24,7 +24,7 @@
             //Arrange
             $test_Anagram = new Anagram;
             $input1 = "a";
-            $input2 = array("b");
+            $input2 = "b";
 
             //Act
             $result = $test_Anagram->anagramCheck($input1, $input2);
@@ -38,7 +38,7 @@
             //Arrange
             $test_Anagram = new Anagram;
             $input1 = "a";
-            $input2 = array("a","b");
+            $input2 = "a b";
 
             //Act
             $result = $test_Anagram->anagramCheck($input1, $input2);
@@ -51,7 +51,7 @@
         {
             $test_Anagram = new Anagram;
             $input1 = "bread";
-            $input2 = array("beard");
+            $input2 = "beard";
 
             //Act
             $result = $test_Anagram->anagramCheck($input1, $input2);
@@ -65,7 +65,7 @@
         {
             $test_Anagram = new Anagram;
             $input1 = "bread";
-            $input2 = array("beord","bread");
+            $input2 = "beord bread";
 
             //Act
             $result = $test_Anagram->anagramCheck($input1, $input2);
@@ -73,6 +73,20 @@
             //Assert
             $this->assertEquals(array(false, true), $result);
 
+        }
+
+        function test_checkIn_One_Feild()
+        {
+            //Arrange
+            $test_Anagram = new Anagram;
+            $input1 = "bread";
+            $input2 = "read beard";
+
+            //Act
+            $result = $test_Anagram->anagramCheck($input1, $input2);
+
+            //Assert
+            $this->assertEquals(array(false,true), $result);
         }
     }
 
