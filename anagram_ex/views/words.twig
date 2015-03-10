@@ -10,12 +10,14 @@
             <div class='row'>
                 {% set tick = 0 %}
                 {% for item in result %}
-                 {% if item == true  %}
+                 {% if item == 'anagram'  %}
                  <p>{{ user_words[tick] }} is an anagram!</p>
-                 {% elseif item == false %}
-                 <p>{{ user_words[tick] }} is NOT an anagram. =(</p>
+                 {% elseif item == 'partial' %}
+                 <p>{{ user_words[tick] }} is a partial match!</p>
+                 {% else %}
+                 <p>{{ user_words[tick] }} is NOT a match. =(</p>
                  {% endif %}
-                 {% set tick = tick + 1 %} 
+                 {% set tick = tick + 1 %}
                 {% endfor %}
             </div>
         </div>

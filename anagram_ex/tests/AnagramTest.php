@@ -55,7 +55,7 @@
 
             //Act
             $result = $test_Anagram->anagramCheck($input1, $input2);
-
+        
             //Assert
             $this->assertEquals(array('anagram'), $result);
 
